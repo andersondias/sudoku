@@ -1,24 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
-#include <time.h>
 #include "tabuleiro.h"
-
-using namespace std;
-
-//retorna um número entre 0 e o parâmetro max - 1
-int random(int max)
-{
-  srand((unsigned)time(NULL));
- 
-  return int((double(rand())/RAND_MAX)*max);
-}
-
-//retorna o inteiro de um char
-int chr_to_int(char chr)
-{
-  return (int)chr - 48;
-}
+#include "helpers.cpp"
 
 Tabuleiro::Tabuleiro()
 {
@@ -99,13 +82,3 @@ void Tabuleiro::imprime_tabuleiro()
     cout << endl;
   }
 }
-
-//criando um tabuleiro novo e imprimindo ele, apenas para ver funcionar
-int main (int argc, char const* argv[])
-{
-  Tabuleiro * tabuleiro = new Tabuleiro();
-  tabuleiro->imprime_tabuleiro();
-
-  return 0;
-}
-
