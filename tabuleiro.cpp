@@ -1,22 +1,8 @@
-#include <iostream>
-#include <fstream>
 #include "tabuleiro.h"
-#include "helpers.cpp"
+#include "helpers.h"
 
-Tabuleiro::Tabuleiro()
+Tabuleiro::Tabuleiro(char* line)
 {
-  //lê do arquivo a configuração inicial do jogo
-  char line[83];
-  FILE* file = fopen("jogos", "r");
-
-  //o arquivo de jogos tem 150 configurações iniciais disponíveis
-  int line_number = random(150);
-
-  //lê linhas até ler a linha sorteada
-  for (int i = 0; i <= line_number; i++) {
-    fgets(line, sizeof(line), file);
-  }
-
   //cria as 9 linhas, colunas e quadrados
   for (int i = 0; i < 9; i++) {
     colunas[i] = new Grupo();

@@ -7,7 +7,7 @@ class Tabuleiro {
     Grupo * linhas[9];
     Grupo * quadrados[9];
   public:
-    Tabuleiro();
+    Tabuleiro(char*);
     bool is_solved();
     void imprime_tabuleiro();
 };
